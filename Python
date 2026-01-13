@@ -1,0 +1,45 @@
+print("============================================")
+print("       UAE Temperature Advisory Program     ")
+print("============================================")
+
+
+while True:
+    try:
+        days = int(input("How many days of temperature readings? "))
+        if days > 0:
+            break
+        else:
+            print("Please enter a number greater than 0.")
+    except:
+        print("Invalid input. Please enter a number.")
+
+total = 0  
+
+
+for day in range(1, days + 1):
+    while True:
+        try:
+            temp = float(input("Enter temperature for day " + str(day) + ": "))
+            total = total + temp
+
+            
+            if temp > 45:
+                print("Stay hydrated! It is very hot in the UAE.")
+            else:
+                if temp >= 30:
+                    print("Nice sunny day!")
+                else:
+                    print("Cool weather – enjoy your time!")
+
+            print()  
+            break
+        except:
+            print("Invalid input. Please enter a number.")
+
+
+average = total / days
+
+
+print("Average temperature for the week:", round(average, 1), "°C")
+print()
+print("Thank you for using the UAE Temperature Advisory Program
